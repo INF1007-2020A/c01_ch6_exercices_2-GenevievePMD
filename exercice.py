@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 
-from matplotlib.colors import cnames
+from matplotlib.colors import cnames    # Fonctionne pas!
 
 
 def list_to_dict(some_list: list) -> dict:
@@ -12,7 +12,8 @@ def list_to_dict(some_list: list) -> dict:
 
 def color_name_to_hex(colors: list) -> list:
     # TODO: Trouver la valeur hex de chaque couleur dans la liste et créer une liste de tupple où le premier élément est le nom de la couleur et le deuxième est la valeur hex
-    return []
+    result = [(color, cnames[color]) for color in colors]
+    return result
 
 
 def odd_integer_for_loop(end: int) -> list:
@@ -68,4 +69,5 @@ def main() -> None:
 
 
 if __name__ == '__main__':
-    main()
+    colors = ['black', 'red', 'pink', 'yellow']
+    print(color_name_to_hex(colors))
